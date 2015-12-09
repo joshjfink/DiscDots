@@ -11,7 +11,7 @@ Install the development version from github with the
 
 ```r
 library(devtools)
-install_github(c("hadley/ggplot2", "joshua-james-f/DiscDots"))
+install_github("joshua-james-f/DiscDots")
 ```
 
 ## Example 
