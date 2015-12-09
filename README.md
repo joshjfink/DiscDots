@@ -24,7 +24,6 @@ col_names <- c("R", "Python", "Stata", "D3.js", "Tableau", "Spark", "SQL", "Hado
 DiscDots(values, var_names=col_names)
 ```
 
-
-![alt tag](https://raw.githubusercontent.com/joshua-james-f/DiscDots/master/figure/Skills.png =450x)
+<a href="url"><img src="https://raw.githubusercontent.com/joshua-james-f/DiscDots/master/figure/Skills.png" width="450" ></a>
 
 *Note: Package still in development*
