@@ -1,1 +1,5 @@
+import(ggplot2)
+import(gtable)
+importFrom(reshape2, melt)
+
 exportPattern("^[[:alpha:]]+")
