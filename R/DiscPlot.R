@@ -3,7 +3,7 @@
 #'
 #' @param values Number of  filled in dots for each variable
 #' @return matrix of 2's and 1's to be fed into plotting functions.
-gen_mat <- function(values, ...) {
+gen_mat <- function(values, var_names, ...) {
   n <- length(values)
   m <- matrix(nrow=n, ncol=max(values))
   for(i in 1:n){
@@ -48,10 +48,12 @@ theme_gdocs2 <- function(base_size=12, base_family="sans", bgcolor = "default") 
 #' Create Gauge Dataframe
 #'
 #' @param values Number of  filled in dots for each variable
+#' @param var_names Names of variables
 #' @return dataframe of 2's and 1's to be fed into plotting functions.
-gen_df <- function(values, ...) {
-  m <- gen_mat(values)
+gen_df <- function(values, var_names,...) {
+  m <- gen_mat(values, var_names)
   mdat <- data.frame(t(m))
+  colnames(mdat) <- var_names
   mdat$var <- factor(1:nrow(mdat))
   mdat2 <- melt(mdat)
   return(mdat2)
@@ -163,8 +165,8 @@ scale_color_gdocs <- scale_colour_gdocs
 #'
 #' @param values Number of  filled in dots for each variable
 #' @return dot plot
-DiscDots <- function(values, ...) {
-  dot_df <- gen_df(values)
+DiscDots <- function(values, var_names, ...) {
+  dot_df <- gen_df(values, var_names)
 sgcols <- c("#E4E7EC", "#3A7AA6")
 return(# Run Test
   ggplot(data = dot_df, aes(x = reorder(variable, value), y = as.numeric(var)))+
