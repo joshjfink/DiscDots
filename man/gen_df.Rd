@@ -4,10 +4,12 @@
 \alias{gen_df}
 \title{Create Gauge Dataframe}
 \usage{
-gen_df(values, ...)
+gen_df(values, var_names, ...)
 }
 \arguments{
 \item{values}{Number of  filled in dots for each variable}
+
+\item{var_names}{Names of variables}
 }
 \value{
 dataframe of 2's and 1's to be fed into plotting functions.

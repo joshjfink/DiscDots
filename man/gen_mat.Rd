@@ -4,7 +4,7 @@
 \alias{gen_mat}
 \title{Create Gauge Matrix}
 \usage{
-gen_mat(values, ...)
+gen_mat(values, var_names, ...)
 }
 \arguments{
 \item{values}{Number of  filled in dots for each variable}

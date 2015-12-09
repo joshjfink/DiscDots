@@ -4,7 +4,7 @@
 \alias{DiscDots}
 \title{Create discrete dot plot}
 \usage{
-DiscDots(values, ...)
+DiscDots(values, var_names, ...)
 }
 \arguments{
 \item{values}{Number of  filled in dots for each variable}
