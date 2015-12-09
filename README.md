@@ -25,6 +25,6 @@ DiscDots(values, var_names=col_names)
 ```
 
 
-![alt tag](https://raw.githubusercontent.com/joshua-james-f/DiscDots/master/figure/Skills.png =450x))
+![alt tag](https://raw.githubusercontent.com/joshua-james-f/DiscDots/master/figure/Skills.png =450x)
 
 *Note: Package still in development*
