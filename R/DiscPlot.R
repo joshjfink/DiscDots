@@ -18,31 +18,6 @@ gen_mat <- function(values, var_names, ...) {
   return(m)
 }
 
-##########
-#' Plot Default Theme
-#'
-theme_gdocs2 <- function(base_size=12, base_family="sans", bgcolor = "default") {
-  (theme_foundation(base_size=base_size, base_family=base_family)
-   + theme(plot.title = element_text(face = "bold",
-                                     # 16 pt, bold, align left
-                                     size = rel(1.33), hjust = 0),
-           panel.background = element_rect(colour = NA),
-           panel.border = element_rect(colour = NA),
-           # 12 pt
-           axis.title = element_text(face = "italic"),
-           panel.grid.major.x = element_blank(),
-           panel.grid.minor.x = element_blank(),
-           # 12 pt
-           axis.text = element_text(),
-           axis.line = element_line(colour="black"),
-           axis.ticks = element_blank(),
-           panel.grid.major = element_line(colour = "#CCCCCC"),
-           panel.grid.minor = element_blank(),
-           legend.key = element_rect(colour = NA),
-           legend.position = "right",
-           legend.direction = "vertical") +theme(rect = element_rect( linetype = 0, colour = NA)))
-}
-
 
 ##########
 #' Create Gauge Dataframe
