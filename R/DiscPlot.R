@@ -34,7 +34,7 @@ gen_df <- function(values, var_names,...) {
   return(mdat2)
 }
 
-#' Foundation Theme
+#' Foundation Theme (from "ggthemes" package)
 #'
 #' This theme is designed to be a foundation from which to build new
 #' themes, and not meant to be used directly. \code{theme_foundation}
@@ -61,41 +61,26 @@ theme_foundation <- function(base_size=12, base_family="") {
   thm
 }
 
-#' Theme with Google Docs Chart defaults
+#' Default theme for DiscDots
 #'
-#' Theme similar to the default look of charts in Google Docs.
+#' Theme generates the style of plot in the documentation/github example
 #'
 #' @inheritParams ggplot2::theme_grey
-#' @export
-#' @family themes gdocs
-#' @examples
-#' dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
-#' (d <- qplot(carat, price, data=dsamp, colour=clarity)
-#'  + theme_gdocs()
-#'  + ggtitle("Diamonds")
-#'  + scale_color_gdocs())
-theme_gdocs <- function(base_size=12, base_family="sans") {
+theme_ddots <- function(base_size=26, base_family="Josefin Sans") {
   theme_foundation(base_size = base_size,
                    base_family = base_family) +
-    theme(rect = element_rect(colour = "black", fill = "white"),
-          line = element_line(colour = "black"),
-          text = element_text(colour = "black"),
-          plot.title = element_text(face = "bold",
-                                    # 16 pt, bold, align left
-                                    size = rel(1.33), hjust = 0),
-          panel.background = element_rect(fill = NA, colour = NA),
-          panel.border = element_rect(fill = NA, colour = NA),
-          # 12 pt
-          axis.title = element_text(face = "italic"),
-          # 12 pt
-          axis.text = element_text(),
-          axis.line = element_line(colour="black"),
-          axis.ticks = element_blank(),
-          panel.grid.major = element_line(colour = "#CCCCCC"),
-          panel.grid.minor = element_blank(),
-          legend.key = element_rect(colour = NA),
-          legend.position = "right",
-          legend.direction = "vertical")
+    theme(
+      rect = element_rect(colour = "black", fill = "white"),
+      text = element_text(colour = "black"),
+      panel.background = element_rect(fill = NA, colour = NA),
+      panel.border = element_rect(fill = NA, colour = NA),
+      axis.title = element_blank(),
+      axis.text.x=element_blank(),
+      axis.text.y=element_text(face="bold", hjust = 0),
+      axis.ticks = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      legend.position="none")+ theme(axis.ticks.length = unit(.5, "cm"))
 }
 
 #' Google Docs color palette (discrete)
@@ -141,13 +126,13 @@ scale_color_gdocs <- scale_colour_gdocs
 #' @param values Number of  filled in dots for each variable
 #' @return dot plot
 DiscDots <- function(values, var_names, ...) {
-  dot_df <- gen_df(values, var_names)
-sgcols <- c("#E4E7EC", "#3A7AA6")
-return(# Run Test
-  ggplot(data = dot_df, aes(x = reorder(variable, value), y = as.numeric(var)))+
-    geom_point(aes(color=factor(value)), size=10) +
-    theme_gdocs()+ scale_color_manual(values=sgcols)+
-    theme( axis.text.x=element_blank(),panel.grid.major.y = element_blank(), axis.line = element_blank(), panel.grid.major.x = element_blank(), panel.grid.minor.y = element_blank()) +
-    coord_flip()+theme(axis.line.y=element_blank(), axis.ticks.y=element_blank()) +
-    theme( axis.text.x=element_blank() ,panel.grid.major.y = element_blank()) +theme(legend.position="none", axis.line = element_blank())+theme( axis.text.x=element_blank() ,panel.grid.major.y = element_blank()) +theme(legend.position="none", axis.line = element_blank())+ labs(list(title = "Title", x = "", y = "")))
+  dot_df <- gen_df(values, var_names) 
+  sgcols <- c("#E4E7EC", "#3A7AA6") 
+  return(# Run Test 
+    ggplot(data = dot_df, aes(x = reorder(variable, value), y = as.numeric(var)))+ 
+    geom_point(aes(color=factor(value)), size=10) 
+    + theme_ddots()
+    + scale_color_manual(values=sgcols) 
+    + coord_flip()
+    )
 }
