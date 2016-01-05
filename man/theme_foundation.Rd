@@ -2,7 +2,7 @@
 % Please edit documentation in R/DiscPlot.R
 \name{theme_foundation}
 \alias{theme_foundation}
-\title{Foundation Theme}
+\title{Foundation Theme (from "ggthemes" package)}
 \usage{
 theme_foundation(base_size = 12, base_family = "")
 }
