@@ -1,5 +1,6 @@
 import(ggplot2)
 import(gtable)
+importFrom(sysfonts, font.add)
 importFrom(reshape2, melt)
 
 exportPattern("^[[:alpha:]]+")

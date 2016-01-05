@@ -7,6 +7,6 @@ Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 Depends: ggplot2
-Imports: ggplot2, reshape2, ggthemes
+Imports: ggplot2, reshape2, ggthemes, sysfonts
 License: What license is it under?
 LazyData: TRUE
