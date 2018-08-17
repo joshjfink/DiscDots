@@ -1,5 +1,7 @@
 # DiscDots
 
+## NOTE: This package is still in development and not ready for use
+
 ## Overview
 
 Discrete dot plots built on ggplot2
